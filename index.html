@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>你的名字 · 个人主页</title>
+  <style>
+    :root {
+      --bg: #faf8f4;
+      --card: #ffffff;
+      --text: #1f1d1a;
+      --muted: #6b6760;
+      --accent: #c2572f;
+      --line: #e6e1d8;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #171614;
+        --card: #211f1c;
+        --text: #f0ede6;
+        --muted: #a39e94;
+        --accent: #e8825a;
+        --line: #33302b;
+      }
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      padding: 64px 20px;
+    }
+    main { max-width: 640px; margin: 0 auto; }
+    .avatar {
+      width: 88px; height: 88px; border-radius: 50%;
+      background: var(--accent); color: #fff;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 36px; font-weight: 600; margin-bottom: 24px;
+    }
+    h1 { font-size: 36px; font-weight: 700; margin-bottom: 8px; }
+    .tagline { color: var(--muted); font-size: 18px; margin-bottom: 40px; }
+    h2 {
+      font-size: 14px; letter-spacing: 0.1em; color: var(--accent);
+      margin: 40px 0 16px; font-weight: 600;
+    }
+    p { margin-bottom: 12px; }
+    .card {
+      background: var(--card); border: 1px solid var(--line);
+      border-radius: 12px; padding: 20px; margin-bottom: 12px;
+    }
+    .card strong { display: block; margin-bottom: 4px; }
+    .card span { color: var(--muted); font-size: 15px; }
+    .links { display: flex; flex-wrap: wrap; gap: 12px; }
+    .links a {
+      color: var(--text); text-decoration: none;
+      border: 1px solid var(--line); border-radius: 999px;
+      padding: 8px 18px; transition: border-color .2s, color .2s;
+    }
+    .links a:hover { border-color: var(--accent); color: var(--accent); }
+    footer { margin-top: 64px; color: var(--muted); font-size: 14px; }
+  </style>
+</head>
+<body>
+  <main>
+    <div class="avatar">你</div>
+    <h1>你好，我是你的名字 👋</h1>
+    <p class="tagline">一句话介绍自己，比如：正在学习 GitHub 的好奇新人</p>
+
+    <h2>关于我</h2>
+    <p>在这里写几句关于你自己的话：你在做什么、对什么感兴趣、最近在学什么。</p>
+
+    <h2>我的学习足迹</h2>
+    <div class="card">
+      <strong>创建了第一个仓库</strong>
+      <span>hello-github —— 学会了提交、分支和 Pull Request</span>
+    </div>
+    <div class="card">
+      <strong>完成了第一次开源贡献</strong>
+      <span>在 first-contributions 项目中留下了我的名字</span>
+    </div>
+    <div class="card">
+      <strong>上线了这个网站</strong>
+      <span>用 GitHub Pages 免费搭建</span>
+    </div>
+
+    <h2>找到我</h2>
+    <div class="links">
+      <a href="https://github.com/你的用户名">GitHub</a>
+      <a href="mailto:you@example.com">邮箱</a>
+    </div>
+
+    <footer>© 2026 你的名字 · 用 GitHub Pages 搭建</footer>
+  </main>
+</body>
+</html>
