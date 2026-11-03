@@ -1,0 +1,29 @@
+name: 每日打卡
+
+on:
+  schedule:
+    - cron: '0 15 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update-date:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 拉取网站代码
+        uses: actions/checkout@v5
+
+      - name: 写入今天的日期
+        run: |
+          TODAY=$(TZ=America/Los_Angeles date +'%Y年%m月%d日')
+          sed -i "s|<!--DATE-->.*<!--/DATE-->|<!--DATE-->${TODAY}<!--/DATE-->|" index.html
+
+      - name: 提交并推送
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898333+github-actions[bot]@users.noreply.github.com"
+          git add index.html
+          git diff --staged --quiet || git commit -m "🤖 每日打卡"
+          git push
